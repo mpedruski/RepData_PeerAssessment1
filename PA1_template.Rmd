@@ -20,7 +20,7 @@ dat <- read.csv("activity.csv",header=T)
 # Calculate total number of steps taken each day
 count <- tapply(dat$steps,dat$date,sum,na.rm=T)
 # Histogram of total steps taken each day
-hist(count)
+hist(count,xlab="Steps",main="Number of steps taken each day")
 #Mean number of steps taken
 mean(count)
 #Median number of steps taken
@@ -49,7 +49,7 @@ for(i in 1:length(missdat)){
 }
 # Histogram of steps taken per day with missing data replaced
 count <- tapply(newsteps,dat$date,sum)
-hist(count)
+hist(count,xlab="Steps",main="Number of steps with imputed data")
 # Mean step count with added data
 mean(count)
 # Median step count with added data

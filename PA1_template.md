@@ -17,7 +17,7 @@ dat <- read.csv("activity.csv",header=T)
 # Calculate total number of steps taken each day
 count <- tapply(dat$steps,dat$date,sum,na.rm=T)
 # Histogram of total steps taken each day
-hist(count)
+hist(count,xlab="Steps",main="Number of steps taken each day")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-2-1.png) 
@@ -73,7 +73,7 @@ for(i in 1:length(missdat)){
 }
 # Histogram of steps taken per day with missing data replaced
 count <- tapply(newsteps,dat$date,sum)
-hist(count)
+hist(count,xlab="Steps",main="Number of steps with imputed data")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
